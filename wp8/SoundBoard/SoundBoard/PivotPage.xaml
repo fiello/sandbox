@@ -20,7 +20,7 @@
     </Page.Transitions>
 
     <Grid>
-        <Pivot x:Uid="Pivot" Title="MY APPLICATION" x:Name="pivot" CommonNavigationTransitionInfo.IsStaggerElement="True">
+        <Pivot x:Uid="Pivot" Title="Sound board" x:Name="pivot" CommonNavigationTransitionInfo.IsStaggerElement="True">
             <!--Pivot item one-->
             <PivotItem
                 x:Uid="PivotItem1"

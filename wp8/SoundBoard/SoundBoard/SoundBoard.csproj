@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{442beb54-c186-45e4-96ff-867e1deee264}</ProjectGuid>
+    <ProjectGuid>{442BEB54-C186-45E4-96FF-867E1DEEE264}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SoundBoard</RootNamespace>
@@ -13,7 +13,7 @@
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>    
+    <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -112,6 +112,52 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Audio\Animals\Cat Kitten.wav" />
+    <Content Include="Assets\Audio\Animals\Cat Meow.wav" />
+    <Content Include="Assets\Audio\Animals\Chimpanzee.wav" />
+    <Content Include="Assets\Audio\Animals\Cow.wav" />
+    <Content Include="Assets\Audio\Animals\Crickets.wav" />
+    <Content Include="Assets\Audio\Animals\Dog.wav" />
+    <Content Include="Assets\Audio\Animals\Dolphin.wav" />
+    <Content Include="Assets\Audio\Animals\Duck.wav" />
+    <Content Include="Assets\Audio\Animals\Horse Gallop.wav" />
+    <Content Include="Assets\Audio\Animals\Horse Walk.wav" />
+    <Content Include="Assets\Audio\Animals\Lion.wav" />
+    <Content Include="Assets\Audio\Animals\Pig.wav" />
+    <Content Include="Assets\Audio\Animals\Rooster.wav" />
+    <Content Include="Assets\Audio\Animals\Sheep.wav" />
+    <Content Include="Assets\Audio\Cartoons\Boing.wav" />
+    <Content Include="Assets\Audio\Cartoons\Bronk.wav" />
+    <Content Include="Assets\Audio\Cartoons\Bugle charge.wav" />
+    <Content Include="Assets\Audio\Cartoons\Laser.wav" />
+    <Content Include="Assets\Audio\Cartoons\Out Here.wav" />
+    <Content Include="Assets\Audio\Cartoons\Splat.wav" />
+    <Content Include="Assets\Audio\Taunts\Cackle.wav" />
+    <Content Include="Assets\Audio\Taunts\Clock Ticking.wav" />
+    <Content Include="Assets\Audio\Taunts\Dial up.wav" />
+    <Content Include="Assets\Audio\Taunts\Drum roll.wav" />
+    <Content Include="Assets\Audio\Taunts\Elevator Music.wav" />
+    <Content Include="Assets\Audio\Taunts\Laugh - Evil.wav" />
+    <Content Include="Assets\Audio\Taunts\Laugh.wav" />
+    <Content Include="Assets\Audio\Taunts\Sad Trombone.wav" />
+    <Content Include="Assets\Audio\Taunts\Sarcastic Ooo.wav" />
+    <Content Include="Assets\Audio\Taunts\Sigh.wav" />
+    <Content Include="Assets\Audio\Taunts\Snore.wav" />
+    <Content Include="Assets\Audio\Taunts\Wrong Price.wav" />
+    <Content Include="Assets\Audio\Taunts\Yawn.wav" />
+    <Content Include="Assets\Audio\Warnings\Air horn.wav" />
+    <Content Include="Assets\Audio\Warnings\Air Raid.wav" />
+    <Content Include="Assets\Audio\Warnings\Alarm Clock - Bell.wav" />
+    <Content Include="Assets\Audio\Warnings\Alarm Clock - Electric.wav" />
+    <Content Include="Assets\Audio\Warnings\Backing up.wav" />
+    <Content Include="Assets\Audio\Warnings\Bell - Church.wav" />
+    <Content Include="Assets\Audio\Warnings\Bell - School.wav" />
+    <Content Include="Assets\Audio\Warnings\Fog horn.wav" />
+    <Content Include="Assets\Audio\Warnings\Glass breaking.wav" />
+    <Content Include="Assets\Audio\Warnings\Missle alert.wav" />
+    <Content Include="Assets\Audio\Warnings\Police - UK.wav" />
+    <Content Include="Assets\Audio\Warnings\Police - US.wav" />
+    <Content Include="Assets\Audio\Warnings\Vuvuzela.wav" />
     <Content Include="Assets\Logo.scale-240.png" />
     <Content Include="Assets\SmallLogo.scale-240.png" />
     <Content Include="Assets\SplashScreen.scale-240.png" />
@@ -139,7 +185,6 @@
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
