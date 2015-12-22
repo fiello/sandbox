@@ -248,5 +248,43 @@ let rawAceValue = ace.rawValue;
 
 print("you have \(ace.getSimpleDescription()) which is equal to \(rawAceValue)");
 if let convertedRank = Rank(rawValue: 11){
-    print("converted var is \(convertedRank.getSimpleDescription())")
+    print("converted var here is \(convertedRank.getSimpleDescription())")
+}
+
+
+print("================== protocols ==================");
+
+protocol SimpleProtocol
+{
+    var simpleDescription: Int { get };
+    func adjust();
+}
+
+class Simple : SimpleProtocol
+{
+    // SimpleProtocol
+    var simpleDescription: Int = 1;
+    
+    func adjust()
+    {
+        print("this is current description: \(self.simpleDescription), adjusted");
+    }
+}
+
+class Simple2 : SimpleProtocol
+{
+    // SimpleProtocol
+    var simpleDescription: Int = 2;
+    
+    func adjust()
+    {
+        print("Another simple protocol, adjusted!");
+    }
+}
+
+let protocolArray: [SimpleProtocol] = [Simple(), Simple(), Simple2()]
+
+for proto in protocolArray {
+    proto.adjust();
+    
 }
