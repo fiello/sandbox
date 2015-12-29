@@ -67,7 +67,12 @@ class RatingControl: UIView
     // MARK: Button action
     func ratingButtonTapped(button: UIButton)
     {
+        let oldRating = rating;
         rating = ratingButtons.indexOf(button)! + 1;
+        if (rating == oldRating && oldRating == 1)
+        {
+            rating = 0; // correction to deselect if we tap on zero button
+        }
         updateButtonSelectionStates();
     }
     
