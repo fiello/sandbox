@@ -53,7 +53,7 @@ class RatingControl: UIView
 
         for (index, button) in ratingButtons.enumerate()
         {
-            buttonFrame.origin.x = CGFloat(index * (buttonSize + spacing));
+            buttonFrame.origin.x = 	CGFloat(index * (buttonSize + spacing));
             button.frame = buttonFrame;
         }
         updateButtonSelectionStates();
