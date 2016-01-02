@@ -288,3 +288,14 @@ for proto in protocolArray {
     proto.adjust();
     
 }
+
+// a bit more of arrays
+var yetAnotherProcotolView = [SimpleProtocol]();
+yetAnotherProcotolView.append(Simple());
+
+let preallocatedArray = [Int](count: 3, repeatedValue: 0)
+
+
+
+
+
