@@ -57,7 +57,8 @@ class MealTableViewController: UITableViewController {
         cell.photoImageView.image = meal.photo;
         cell.ratingControl.rating = meal.rating;
         // Configure the cell...
-
+        print("Configuring cell: \(meal.name), \(meal.photo), \(meal.rating)");
+        
         return cell
     }
     

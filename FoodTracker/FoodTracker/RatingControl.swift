@@ -14,6 +14,7 @@ class RatingControl: UIView
     var rating = 0
     {
         didSet {
+            buttonsAdjusted = false; // since property can be directly changed by external viewer... mtf!
             setNeedsLayout();
         }
     }
@@ -46,7 +47,7 @@ class RatingControl: UIView
         {
             return;
         }
-
+        
         buttonsAdjusted = ratingButtons.count == stars ? true : false;
         let buttonSize = Int(frame.size.height);
         var buttonFrame = CGRect(x:0, y:0, width:buttonSize, height: buttonSize);
@@ -78,6 +79,7 @@ class RatingControl: UIView
     
     func updateButtonSelectionStates()
     {
+        print("updating button selection: \(rating)")
         for (index, button) in ratingButtons.enumerate()
         {
             button.selected = index < rating;
