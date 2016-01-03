@@ -29,6 +29,13 @@ class MealViewController
         super.viewDidLoad()
         //assign delegate to handle user input events from a text field
         nameTextField.delegate = self;
+        if let meal = meal {
+            navigationItem.title = meal.name;
+            nameTextField.text = meal.name;
+            photoImageView.image = meal.photo;
+            ratingControl.rating = meal.rating;
+        }
+        
         checkValidMealName();
     }
 
@@ -70,7 +77,15 @@ class MealViewController
     // MARK: Navigation
     @IBAction func cancel(sender: AnyObject)
     {
-        dismissViewControllerAnimated(true, completion: nil)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController;
+        if (isPresentingInAddMealMode)
+        {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true);
+        }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
