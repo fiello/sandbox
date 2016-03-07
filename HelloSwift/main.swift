@@ -295,6 +295,59 @@ yetAnotherProcotolView.append(Simple());
 
 let preallocatedArray = [Int](count: 3, repeatedValue: 0)
 
+print("================== SWIFT basics ++ ==================");
+
+var newVariable: UInt8 = 0;
+for _ in 0..<UInt8.max {
+    print("\(++newVariable)", terminator: " ")
+    
+}
+print("")
+print("going to go beyond the threshold")
+//++newVariable -- runtime error!
+print("")
+
+typealias AudioSample = UInt16
+let i = 1;
+if i == 1 {
+    
+}
+
+// tuples
+let http404ErrorCode = (404, "Not Found")
+let (statusCode, statusMessage) = http404ErrorCode
+
+print("================== SWIFT collections ==================");
+
+
+let numOfColumns = 5;
+let numOfRows = 5;
+var array = Array<Array<Int>>();
+for i in 0..<numOfRows {
+    array.append(Array(count:numOfColumns, repeatedValue:Int()));
+}
+for var row in array {
+    for var cell in row {
+        print("\(cell)", terminator: " ")
+    }
+    print("")
+}
+
+
+print("================== SWIFT generics ==================");
+
+func swapValues<T>(inout a: T, inout and b: T)
+{
+    let temp = b;
+    b = a;
+    a = temp;
+}
+
+var a = 2;
+var b = 3;
+swapValues(&a, and: &b);
+print("a = \(a), b = \(b)")
+
 
 
 

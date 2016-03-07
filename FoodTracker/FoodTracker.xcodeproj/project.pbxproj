@@ -159,6 +159,11 @@
 					31CC36651C298C27000499F6 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 5BNRHV8HY8;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					31CC36791C298C27000499F6 = {
 						CreatedOnToolsVersion = 7.2;
