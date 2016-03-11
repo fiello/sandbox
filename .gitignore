@@ -212,3 +212,7 @@ build/
 DerivedData
 *.xcuserstate
 
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
