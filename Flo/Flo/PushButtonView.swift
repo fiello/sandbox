@@ -11,9 +11,12 @@ import UIKit
 @IBDesignable
 class PushButtonView: UIButton {
 
+    @IBInspectable var fillColor: UIColor = UIColor.blue
+    @IBInspectable var isAddButton: Bool = true
+    
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath(ovalIn: rect)
-        UIColor.green.setFill()
+        fillColor.setFill()
         path.fill();
         
         //set up the width and height variables
@@ -39,17 +42,19 @@ class PushButtonView: UIButton {
             y:bounds.height/2 + 0.5))
         
         //Vertical Line
+        if (isAddButton)
+        {
+            //move to the start of the vertical stroke
+            plusPath.move(to: CGPoint(
+                x:bounds.width/2 + 0.5,
+                y:bounds.height/2 - plusWidth/2 + 0.5))
         
-        //move to the start of the vertical stroke
-        plusPath.move(to: CGPoint(
-            x:bounds.width/2 + 0.5,
-            y:bounds.height/2 - plusWidth/2 + 0.5))
-        
-        //add the end point to the vertical stroke
-        plusPath.addLine(to: CGPoint(
-            x:bounds.width/2 + 0.5,
-            y:bounds.height/2 + plusWidth/2 + 0.5))
-        
+            //add the end point to the vertical stroke
+            plusPath.addLine(to: CGPoint(
+                x:bounds.width/2 + 0.5,
+                y:bounds.height/2 + plusWidth/2 + 0.5))
+        }
+            
         //set the stroke color
         UIColor.white.setStroke()
         
