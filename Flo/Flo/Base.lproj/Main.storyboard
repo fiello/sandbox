@@ -25,7 +25,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.10069609999012352" green="1" blue="0.04979553872226905" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.21702490668077373" green="0.73494764397905765" blue="0.18121075121348992" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -43,12 +43,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-2T-9q0" customClass="CounterView" customModule="Flo" customModuleProvider="target">
+                                <frame key="frameInset" minX="72" minY="28" width="230" height="230"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="S3g-Tb-4y3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3ZC-jo-bKY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AED-2M-74t"/>
                             <constraint firstItem="3ZC-jo-bKY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DZu-Tm-aak"/>
+                            <constraint firstItem="3ZC-jo-bKY" firstAttribute="top" secondItem="aIA-2T-9q0" secondAttribute="bottom" constant="25.5" id="IPT-gd-Cbl"/>
                             <constraint firstItem="Zsl-nb-wB3" firstAttribute="top" secondItem="3ZC-jo-bKY" secondAttribute="bottom" constant="45.5" id="UU3-Wj-q7w"/>
+                            <constraint firstItem="aIA-2T-9q0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gxQ-2A-kgA"/>
                             <constraint firstItem="Zsl-nb-wB3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i7E-Gq-Htw"/>
                         </constraints>
                     </view>
