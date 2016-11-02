@@ -14,7 +14,13 @@ let pi: CGFloat  = CGFloat(M_PI)
 @IBDesignable
 class CounterView: UIView {
 
-    @IBInspectable var counter: Int = 5;
+    @IBInspectable var counter: Int = 5 {
+        didSet {
+            if counter <= NumberOfGlasses {
+                setNeedsDisplay()
+            }
+        }
+    }
     @IBInspectable var outlineColor: UIColor = UIColor.blue
     @IBInspectable var counterColor: UIColor = UIColor.orange
     
