@@ -8,22 +8,23 @@
 
 import UIKit
 
-let NumberOfGlasses = 8
 let pi: CGFloat  = CGFloat(M_PI)
 
 @IBDesignable
 class CounterView: UIView {
 
-    @IBInspectable var counter: Int = 5 {
+    /*@IBInspectable var numOfGlasses: Int {
         didSet {
-            if counter <= NumberOfGlasses {
+            if numOfGlasses <= MaxNumberOfGlasses {
                 setNeedsDisplay()
             }
         }
-    }
+    }*/
+    
+    var counter : Counter?
     @IBInspectable var outlineColor: UIColor = UIColor.blue
     @IBInspectable var counterColor: UIColor = UIColor.orange
-    
+         
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
@@ -61,10 +62,10 @@ class CounterView: UIView {
         let angleDifference: CGFloat = 2 * pi - startAngle + endAngle
         
         //then calculate the arc for each single glass
-        let arcLengthPerGlass = angleDifference / CGFloat(NumberOfGlasses)
+        let arcLengthPerGlass = angleDifference / CGFloat(MaxNumberOfGlasses)
         
         //then multiply out by the actual glasses drunk
-        let outlineEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
+        let outlineEndAngle = arcLengthPerGlass * CGFloat(counter!.numOfGlasses) + startAngle
         
         //2 - draw the outer arc
         let outlinePath = UIBezierPath(arcCenter: center,
@@ -86,9 +87,5 @@ class CounterView: UIView {
         outlineColor.setStroke()
         outlinePath.lineWidth = 5.0
         outlinePath.stroke()
-        
-        
     }
- 
-
 }

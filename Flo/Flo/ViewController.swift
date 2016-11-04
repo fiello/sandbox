@@ -17,6 +17,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let loadedCounter = loadCounters() {
+            counterView.counter = loadedCounter
+        }
+        else {
+            counterView.counter = Counter(counter: 0)
+        }
+        counterView.counter!.parentView = counterView
         updateCounterLabel()
     }
 
@@ -24,28 +31,38 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func btnPushButton(button: PushButtonView)
     {
         if button.isAddButton
         {
-            if NumberOfGlasses > counterView.counter {
-                counterView.counter += 1
+            if MaxNumberOfGlasses > counterView.counter!.numOfGlasses {
+                counterView.counter!.numOfGlasses += 1
             }
         }
         else
         {
-            if counterView.counter > 0 {
-                counterView.counter -= 1;
+            if counterView.counter!.numOfGlasses > 0 {
+                counterView.counter!.numOfGlasses -= 1;
             }
         }
-        
+        unloadCounters()
         updateCounterLabel()
     }
     
     func updateCounterLabel()
     {
-        counterLabel.text = String(counterView.counter)
+        counterLabel.text = String(counterView.counter!.numOfGlasses)
+    }
+    
+    func loadCounters() -> Counter?
+    {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Counter.ArchiveUrl.path) as? Counter
+    }
+    
+    func unloadCounters()
+    {
+        NSKeyedArchiver.archiveRootObject(counterView.counter!, toFile: Counter.ArchiveUrl.path)
     }
     
 }
