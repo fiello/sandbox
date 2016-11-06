@@ -12,8 +12,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var counterView: CounterView!
+    @IBOutlet weak var graphView: GraphView!
     @IBOutlet weak var counterLabel: UILabel!
-
+    var isGraphViewShowing = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,6 +27,7 @@ class ViewController: UIViewController {
         }
         counterView.counter!.parentView = counterView
         updateCounterLabel()
+        counterView.layer.zPosition = 1 // force counter on top
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,8 +49,28 @@ class ViewController: UIViewController {
                 counterView.counter!.numOfGlasses -= 1;
             }
         }
+        
+        if isGraphViewShowing {
+            counterViewTap(gesture: nil)
+        }
+        
         unloadCounters()
         updateCounterLabel()
+    }
+    
+    @IBAction func counterViewTap(gesture: UITapGestureRecognizer?)
+    {
+        if isGraphViewShowing
+        {
+            UIView.transition(from: graphView, to: counterView, duration: 1.0, options:
+                [UIViewAnimationOptions.transitionFlipFromRight, UIViewAnimationOptions.showHideTransitionViews], completion: nil)
+        }
+        else {
+            UIView.transition(from: counterView, to: graphView, duration: 1.0, options:
+                [UIViewAnimationOptions.transitionFlipFromLeft, UIViewAnimationOptions.showHideTransitionViews], completion: nil)
+            
+        }
+        isGraphViewShowing = !isGraphViewShowing
     }
     
     func updateCounterLabel()

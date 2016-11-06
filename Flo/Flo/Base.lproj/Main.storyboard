@@ -30,7 +30,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="btnPushButtonWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hp9-bi-m1h"/>
+                                    <action selector="btnPushButtonWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCJ-9q-AgB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsl-nb-wB3" customClass="PushButtonView" customModule="Flo" customModuleProvider="target">
@@ -45,44 +45,68 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="btnPushButtonWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FXg-eh-SFr"/>
+                                    <action selector="btnPushButtonWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D50-Uc-ENF"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-2T-9q0" customClass="CounterView" customModule="Flo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJ4-Cr-ibn" userLabel="Container">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYv-uT-Jsf">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-2T-9q0" customClass="CounterView" customModule="Flo" customModuleProvider="target">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYv-uT-Jsf">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="2N8-nN-bmD"/>
+                                                    <constraint firstAttribute="width" constant="44" id="mfJ-iP-BLf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="2N8-nN-bmD"/>
-                                            <constraint firstAttribute="width" constant="44" id="mfJ-iP-BLf"/>
+                                            <constraint firstItem="DYv-uT-Jsf" firstAttribute="centerX" secondItem="aIA-2T-9q0" secondAttribute="centerX" id="8Ia-aL-ldD"/>
+                                            <constraint firstAttribute="height" constant="230" id="FBN-xN-oCY"/>
+                                            <constraint firstAttribute="width" constant="230" id="H06-Nu-FJn"/>
+                                            <constraint firstItem="DYv-uT-Jsf" firstAttribute="centerY" secondItem="aIA-2T-9q0" secondAttribute="centerY" id="eCS-2g-eHr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                                <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                                <color key="value" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJx-qS-Kzf" userLabel="GraphView" customClass="GraphView" customModule="Flo" customModuleProvider="target">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="9Gk-Ti-NTn"/>
+                                            <constraint firstAttribute="height" constant="250" id="Sgo-lY-YzP"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="FBN-xN-oCY"/>
-                                    <constraint firstAttribute="width" constant="230" id="H06-Nu-FJn"/>
-                                    <constraint firstItem="DYv-uT-Jsf" firstAttribute="centerY" secondItem="aIA-2T-9q0" secondAttribute="centerY" id="mbU-87-2IF"/>
-                                    <constraint firstItem="DYv-uT-Jsf" firstAttribute="centerX" secondItem="aIA-2T-9q0" secondAttribute="centerX" id="qCM-Zl-HKR"/>
+                                    <constraint firstAttribute="width" constant="300" id="KVe-DY-qNX"/>
+                                    <constraint firstItem="cJx-qS-Kzf" firstAttribute="centerY" secondItem="eJ4-Cr-ibn" secondAttribute="centerY" id="Kih-YY-DGB"/>
+                                    <constraint firstAttribute="height" constant="300" id="R5S-Xg-ye6"/>
+                                    <constraint firstItem="aIA-2T-9q0" firstAttribute="centerX" secondItem="eJ4-Cr-ibn" secondAttribute="centerX" id="bxk-Cb-pwx"/>
+                                    <constraint firstItem="aIA-2T-9q0" firstAttribute="centerY" secondItem="eJ4-Cr-ibn" secondAttribute="centerY" id="ezD-3M-AYd"/>
+                                    <constraint firstItem="cJx-qS-Kzf" firstAttribute="centerX" secondItem="eJ4-Cr-ibn" secondAttribute="centerX" id="ouL-SD-sDb"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                        <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
-                                        <color key="value" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="68d-ms-zb3" appends="YES" id="3oz-j8-3D1"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aIA-2T-9q0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="69M-pG-nMz"/>
-                            <constraint firstItem="3ZC-jo-bKY" firstAttribute="top" secondItem="aIA-2T-9q0" secondAttribute="bottom" constant="10" id="Ddk-cI-DlG"/>
                             <constraint firstItem="Zsl-nb-wB3" firstAttribute="top" secondItem="3ZC-jo-bKY" secondAttribute="bottom" constant="44" id="NES-8P-209"/>
+                            <constraint firstItem="3ZC-jo-bKY" firstAttribute="top" secondItem="aIA-2T-9q0" secondAttribute="bottom" constant="41" id="XRU-m5-D8M"/>
                             <constraint firstItem="Zsl-nb-wB3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="asb-Gw-dj5"/>
+                            <constraint firstItem="eJ4-Cr-ibn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cTR-3M-pDh"/>
                             <constraint firstItem="3ZC-jo-bKY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="q9O-yv-7GU"/>
                             <constraint firstItem="3ZC-jo-bKY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wJh-1r-3bC"/>
                         </constraints>
@@ -90,9 +114,15 @@
                     <connections>
                         <outlet property="counterLabel" destination="DYv-uT-Jsf" id="rLO-7f-FEw"/>
                         <outlet property="counterView" destination="aIA-2T-9q0" id="HZw-MA-SBp"/>
+                        <outlet property="graphView" destination="cJx-qS-Kzf" id="maG-qR-s1O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="68d-ms-zb3">
+                    <connections>
+                        <action selector="counterViewTapWithGesture:" destination="BYZ-38-t0r" id="b54-xf-Q65"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="42.728635682158924"/>
         </scene>
