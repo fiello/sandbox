@@ -11,10 +11,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var graphView: GraphView!
+    @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var counterLabel: UILabel!
-    var isGraphViewShowing = false
+    var isGraphViewShowing = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         }
         counterView.counter!.parentView = counterView
         updateCounterLabel()
-        counterView.layer.zPosition = 1 // force counter on top
+        graphView.layer.zPosition = 1 // force on top
     }
 
     override func didReceiveMemoryWarning() {
