@@ -40,21 +40,21 @@ class MealViewController
     }
 
     // MARK: UITextFieldDelegate
-    func textFieldDidEndEditing(textField: UITextField)
+    func textFieldDidEndEditing(_ textField: UITextField)
     {
         checkValidMealName();
         navigationItem.title = textField.text;
     }
-    func textFieldDidBeginEditing(textField: UITextField)
+    func textFieldDidBeginEditing(_ textField: UITextField)
     {
-        saveButton.enabled = false;
+        saveButton.isEnabled = false;
     }
     func checkValidMealName ()
     {
         let text = nameTextField.text ?? "";
-        saveButton.enabled = !text.isEmpty;
+        saveButton.isEnabled = !text.isEmpty;
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         // resign from editing and hide keyboard
         textField.resignFirstResponder();
@@ -62,34 +62,34 @@ class MealViewController
     }
     
     // MARK: UINavigationControllerDelegate
-    func imagePickerControllerDidCancel(picker: UIImagePickerController)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
-        dismissViewControllerAnimated(true, completion: nil);
+        dismiss(animated: true, completion: nil);
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage;
         photoImageView.image = selectedImage;
-        dismissViewControllerAnimated(true, completion: nil);
+        dismiss(animated: true, completion: nil);
     }
     
     // MARK: Navigation
-    @IBAction func cancel(sender: AnyObject)
+    @IBAction func cancel(_ sender: AnyObject)
     {
         let isPresentingInAddMealMode = presentingViewController is UINavigationController;
         if (isPresentingInAddMealMode)
         {
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
         else {
-            navigationController!.popViewControllerAnimated(true);
+            navigationController!.popViewController(animated: true);
         }
-        
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (sender === saveButton)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let btn = sender as? UIBarButtonItem,
+            btn == saveButton
         {
             let name = nameTextField.text ?? "";
             let photo  = photoImageView.image;
@@ -99,13 +99,13 @@ class MealViewController
     }
     
     // MARK: Actions
-    @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer)
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer)
     {
         nameTextField.resignFirstResponder();
         let imagePickerController = UIImagePickerController();
-        imagePickerController.sourceType = .PhotoLibrary;
+        imagePickerController.sourceType = .photoLibrary;
         imagePickerController.delegate = self;
-        presentViewController(imagePickerController, animated: true, completion: nil)
+        present(imagePickerController, animated: true, completion: nil)
         
     }
 }

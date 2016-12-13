@@ -31,10 +31,10 @@ class RatingControl: UIView
         for _ in 0..<stars
         {
             let button = UIButton();
-            button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: .TouchDown);
-            button.setImage(filledStarImage, forState: [.Highlighted, .Selected]);
-            button.setImage(filledStarImage, forState: .Selected);
-            button.setImage(emptyStarImage, forState: .Normal);
+            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(_:)), for: .touchDown);
+            button.setImage(filledStarImage, for: [.highlighted, .selected]);
+            button.setImage(filledStarImage, for: .selected);
+            button.setImage(emptyStarImage, for: UIControlState());
             button.adjustsImageWhenHighlighted = false;
             ratingButtons += [button];
             addSubview(button);
@@ -52,7 +52,7 @@ class RatingControl: UIView
         let buttonSize = Int(frame.size.height);
         var buttonFrame = CGRect(x:0, y:0, width:buttonSize, height: buttonSize);
 
-        for (index, button) in ratingButtons.enumerate()
+        for (index, button) in ratingButtons.enumerated()
         {
             buttonFrame.origin.x = 	CGFloat(index * (buttonSize + spacing));
             button.frame = buttonFrame;
@@ -60,16 +60,16 @@ class RatingControl: UIView
         updateButtonSelectionStates();
     }
     
-    override func intrinsicContentSize() -> CGSize
+    override var intrinsicContentSize : CGSize
     {
         return CGSize(width: 240, height: 44);
     }
     
     // MARK: Button action
-    func ratingButtonTapped(button: UIButton)
+    func ratingButtonTapped(_ button: UIButton)
     {
         let oldRating = rating;
-        rating = ratingButtons.indexOf(button)! + 1;
+        rating = ratingButtons.index(of: button)! + 1;
         if (rating == oldRating && oldRating == 1)
         {
             rating = 0; // correction to deselect if we tap on zero button
@@ -80,9 +80,9 @@ class RatingControl: UIView
     func updateButtonSelectionStates()
     {
         print("updating button selection: \(rating)")
-        for (index, button) in ratingButtons.enumerate()
+        for (index, button) in ratingButtons.enumerated()
         {
-            button.selected = index < rating;
+            button.isSelected = index < rating;
         }
     }
 
